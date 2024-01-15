@@ -9,6 +9,7 @@ const NO_NUMBER = '🔞 No Number';
 const CORRECT_ANSWER = '🎉 CORRECT ANSWER';
 const NUMBER_LOW = '⏬ LOW'
 const NUMBER_HIGH = '⏫ HIGH';
+const LOST = '😭 You lost the game';
 
 let generateRandomNumber = () => Math.floor(Math.random() * 20);
 let randomNumber = generateRandomNumber();
@@ -34,7 +35,16 @@ buttonInput.addEventListener('click', () => {
         }
     }
 
+    if (score == 0) {
+        handleLoss();
+    }
+
 })
+
+let handleLoss = () => {
+    messageToDisplay.textContent = LOST;
+    document.body.style.backgroundColor = '#ff0000';
+}
 
 let handleScore = (wrongAnswer) => {
     if (wrongAnswer) {
@@ -51,7 +61,6 @@ let handleSuccess = () => {
     messageToDisplay.textContent = CORRECT_ANSWER;
     document.body.style.backgroundColor = '#60b347';
     document.querySelector('.number').textContent = randomNumber;
-    buttonInput.setAttribute('disabled', true);
     handleScore(false);
     setHighScore(score);
 }
