@@ -74,7 +74,7 @@ let value = [
 value.sort((a, b) => a.y - b.y);
 
 console.log('OUTPUT : ', value);
-// OUTPUT: [{ x: 1, y: 1 }, { x: 2, y: 5 },	{ x: 6, y: 10 }];
+> OUTPUT: [{ x: 1, y: 1 }, { x: 2, y: 5 },	{ x: 6, y: 10 }];
 
 
 let s = "It was a dark and stormy night";
@@ -85,6 +85,6 @@ console.log(words);
 words.sort((a, b) => a.length - b.length);
 console.log(words);
 
-// ["and", "dark", "night", "stormy", "was"]
-// [("and", "was", "dark", "night", "stormy")];
+> ["and", "dark", "night", "stormy", "was"]
+> [("and", "was", "dark", "night", "stormy")];
 ```
